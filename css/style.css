@@ -1,0 +1,108 @@
+/*Header starts here*/
+header {
+  background-color: black;
+  padding: 1em;
+  border-bottom: 0.2em solid white;
+}
+
+header h1 {
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+/*Image carousel starts here*/
+.carousel-inner {
+  margin-bottom: 2em;
+  border-bottom: 0.2em solid black;
+}
+
+.carousel-inner img {
+  height: 30em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel-inner h5 {
+  font-size: 2em;
+}
+
+.carousel-inner h5, .carousel-inner p {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-shadow: 0 0 2em rgba(0, 0, 0, 0.89);
+}
+
+/*container styling starts here*/
+h3 {
+  border-bottom: 0.1em solid black;
+  margin-bottom: 1em;
+  padding-bottom: 0.3em;
+}
+
+.imgandtext img {
+  height: 25vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 0 0.6em 0.1em rgba(0, 0, 0, 0.46);
+          box-shadow: 0 0 0.6em 0.1em rgba(0, 0, 0, 0.46);
+}
+
+.imgandtext h6 {
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-weight: bolder;
+}
+
+/*footer styling starts here */
+footer {
+  background-color: black;
+  border-top: 0.2em solid #3f3f3f;
+  margin-top: 2em;
+}
+
+footer h4 {
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  padding-top: 0.9em;
+}
+
+footer p {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  text-align: center;
+  padding-bottom: 0.9em;
+  margin-bottom: 0;
+}
+
+footer p a {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+footer p a:hover {
+  color: gray;
+}
+
+/*enable image animation for large screens*/
+@media (min-width: 992px) {
+  .imgandtext img {
+    margin-bottom: 0.5em;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+  }
+  .imgandtext img:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+/*# sourceMappingURL=style.css.map */

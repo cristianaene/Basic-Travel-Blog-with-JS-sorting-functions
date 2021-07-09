@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,EADF,CACE,CAAC,CAAC;EACE,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CAKd;;AARN,AAKQ,EALN,CACE,CAAC,AAII,MAAM,CAAC;EACJ,KAAK,EAAE,IAAI;CACd;;AAIT,AAAA,UAAU,CAAC;EACP,aAAa,EAAE,iBAAiB;EAChC,cAAc,EAAE,KAAK;CACxB",
+    "sources": [
+        "reviews.scss"
+    ],
+    "names": [],
+    "file": "reviews.css"
+}
