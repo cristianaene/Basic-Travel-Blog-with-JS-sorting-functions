@@ -107,3 +107,11 @@ footer {
 
     }
 }
+
+@media (max-width: 767px) { 
+    .imgandtext {
+        img {
+           display: none;
+        }
+    }
+}

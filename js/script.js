@@ -68,7 +68,7 @@ var Restaurants = /** @class */ (function (_super) {
         return _this;
     }
     Restaurants.prototype.displayRestaurant = function () {
-        return "\n            <div class=\"col-lg-3 col-md-6 col-sm-12\">\n                <p><strong>" + this.name + "</strong></p>\n                " + this.displayLocation() + "\n                <p>" + this.resttype + ", " + this.website + "</p>\n                <p>Created: " + this.creationdate.toLocaleString() + "</p>\n            </div>\n        ";
+        return "\n            <div class=\"col-lg-3 col-md-6 col-sm-12\">\n                <p><strong>" + this.name + "</strong></p>\n                " + this.displayLocation() + "\n                <p>" + this.resttype + ", " + this.website + ", " + this.phoneno + "</p>\n                <p>Created: " + this.creationdate.toLocaleString() + "</p>\n            </div>\n        ";
     };
     return Restaurants;
 }(Visits));
@@ -122,7 +122,7 @@ var place3 = new Places("Italy", "Varenna", 125893, "img/varenna.jpg", "Via Anti
 var place4 = new Places("Italy", "Venice", 784259, "img/venice02.jpg", "Piazza San Marco 85", new Date(2021, 8, 15, 17));
 var places = [place1, place2, place3, place4];
 var restaurant1 = new Restaurants("Italy", "Burano", 88875, "img/casadimaria.jpg", 5855555, "Italian Cuisine", "www.cuicina.it", "Via Burano 22", "La casa di Maria", new Date(2021, 8, 15, 17));
-var restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss charcuterie", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021, 8, 15, 17));
+var restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021, 8, 15, 17));
 var restaurant3 = new Restaurants("Italy", "Burano", 88822, "img/ilgato.jpg", 5852236, "Italian Cuisine", "www.ilgato.it", "Via Burano 48", "Il Gato", new Date(2021, 8, 15, 17));
 var restaurant4 = new Restaurants("Italy", "Padua", 99823, "img/cheesedeli.jpg", 8862588, "Italian Deli", "www.thecheesedeli.it", "Via Padua 48", "The Cheese Deli", new Date(2021, 8, 15, 17));
 var restaurants = [restaurant1, restaurant2, restaurant3, restaurant4];

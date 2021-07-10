@@ -105,4 +105,10 @@ footer p a:hover {
             transform: scale(1.05);
   }
 }
+
+@media (max-width: 767px) {
+  .imgandtext img {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */

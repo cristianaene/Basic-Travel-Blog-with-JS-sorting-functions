@@ -73,7 +73,7 @@ class Restaurants extends Visits {
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <p><strong>${this.name}</strong></p>
                 ${this.displayLocation()}
-                <p>${this.resttype}, ${this.website}</p>
+                <p>${this.resttype}, ${this.website}, ${this.phoneno}</p>
                 <p>Created: ${this.creationdate.toLocaleString()}</p>
             </div>
         `;
@@ -142,7 +142,7 @@ let place4 = new Places("Italy", "Venice", 784259, "img/venice02.jpg", "Piazza S
 let places : Array <Places> = [place1, place2, place3, place4];
 
 let restaurant1 = new Restaurants("Italy", "Burano", 88875, "img/casadimaria.jpg", 5855555, "Italian Cuisine", "www.cuicina.it","Via Burano 22", "La casa di Maria", new Date(2021,8,15,17));
-let restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss charcuterie", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021,8,15,17));
+let restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021,8,15,17));
 let restaurant3 = new Restaurants("Italy", "Burano", 88822, "img/ilgato.jpg", 5852236, "Italian Cuisine", "www.ilgato.it", "Via Burano 48", "Il Gato", new Date(2021,8,15,17));
 let restaurant4 = new Restaurants("Italy", "Padua", 99823, "img/cheesedeli.jpg", 8862588, "Italian Deli", "www.thecheesedeli.it", "Via Padua 48", "The Cheese Deli", new Date(2021,8,15,17));
 
