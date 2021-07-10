@@ -13,6 +13,9 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+/**
+ * Parent class for all objects
+ */
 var Locations = /** @class */ (function () {
     function Locations(country, city, zipcode, image, address) {
         this.country = country;
@@ -26,6 +29,9 @@ var Locations = /** @class */ (function () {
     };
     return Locations;
 }());
+/**
+ * Adds visited destinations to locations
+ */
 var Visits = /** @class */ (function (_super) {
     __extends(Visits, _super);
     function Visits(country, city, zipcode, image, address, name, creationdate) {
@@ -36,6 +42,9 @@ var Visits = /** @class */ (function (_super) {
     }
     return Visits;
 }(Locations));
+/**
+ * Holds place properties
+ */
 var Places = /** @class */ (function (_super) {
     __extends(Places, _super);
     function Places(country, city, zipcode, image, address, creationdate) {
@@ -46,6 +55,9 @@ var Places = /** @class */ (function (_super) {
     };
     return Places;
 }(Visits));
+/**
+ * Holds restaurants properties
+ */
 var Restaurants = /** @class */ (function (_super) {
     __extends(Restaurants, _super);
     function Restaurants(country, city, zipcode, image, phoneno, resttype, website, address, name, creationdate) {
@@ -60,6 +72,9 @@ var Restaurants = /** @class */ (function (_super) {
     };
     return Restaurants;
 }(Visits));
+/**
+ * Holds events properties
+ */
 var Events = /** @class */ (function (_super) {
     __extends(Events, _super);
     function Events(country, city, zipcode, image, eventdate, ticketprice, address, name, creationdate) {
@@ -73,31 +88,50 @@ var Events = /** @class */ (function (_super) {
     };
     return Events;
 }(Visits));
+/**
+ * Adds visited places to the HTML page
+ * @param places : array of places
+ */
+function addPlaces(places) {
+    for (var i = 0; i < places.length; i++) {
+        document.getElementById("places").innerHTML += places[i].displayPlace();
+    }
+}
+/**
+ * Adds restaurants to the HTML page
+ * @param restaurants : array of restaurants
+ */
+function addRestaurants(restaurants) {
+    for (var i = 0; i < restaurants.length; i++) {
+        document.getElementById("restaurants").innerHTML += restaurants[i].displayRestaurant();
+    }
+}
+/**
+ * Adds events to the HTML page
+ * @param events : array of events
+ */
+function addEvents(events) {
+    for (var i = 0; i < events.length; i++) {
+        document.getElementById("events").innerHTML += events[i].displayEvent();
+    }
+}
 // script execution starts here
-// places
 var place1 = new Places("Italy", "Burano", 88875, "img/burano3.jpg", "Via Burano 22", new Date(2021, 8, 15, 17));
 var place2 = new Places("Italy", "Padua", 23551, "img/padua.jpg", "Piazza Padua 15", new Date(2021, 8, 15, 17));
 var place3 = new Places("Italy", "Varenna", 125893, "img/varenna.jpg", "Via Antica 36", new Date(2021, 8, 15, 17));
 var place4 = new Places("Italy", "Venice", 784259, "img/venice02.jpg", "Piazza San Marco 85", new Date(2021, 8, 15, 17));
 var places = [place1, place2, place3, place4];
-for (var i = 0; i < places.length; i++) {
-    document.getElementById("places").innerHTML += places[i].displayPlace();
-}
-// restaurants
 var restaurant1 = new Restaurants("Italy", "Burano", 88875, "img/casadimaria.jpg", 5855555, "Italian Cuisine", "www.cuicina.it", "Via Burano 22", "La casa di Maria", new Date(2021, 8, 15, 17));
 var restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss charcuterie", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021, 8, 15, 17));
 var restaurant3 = new Restaurants("Italy", "Burano", 88822, "img/ilgato.jpg", 5852236, "Italian Cuisine", "www.ilgato.it", "Via Burano 48", "Il Gato", new Date(2021, 8, 15, 17));
 var restaurant4 = new Restaurants("Italy", "Padua", 99823, "img/cheesedeli.jpg", 8862588, "Italian Deli", "www.thecheesedeli.it", "Via Padua 48", "The Cheese Deli", new Date(2021, 8, 15, 17));
 var restaurants = [restaurant1, restaurant2, restaurant3, restaurant4];
-for (var i = 0; i < restaurants.length; i++) {
-    document.getElementById("restaurants").innerHTML += restaurants[i].displayRestaurant();
-}
-// events country, city, zipcode, image, eventdate, ticketprice, address, name
 var event1 = new Events("Italy", "Burano", 225888, "img/lace.JPG", new Date(2021, 8, 15, 17), 15, "Via Blanca 15", "Burano Lace Festival", new Date(2021, 8, 15, 17));
 var event2 = new Events("Italy", "Venice", 25877, "img/venice03.JPG", new Date(2021, 9, 20, 19), 20, "Via Academica 15", "Venice Sunsets Fest", new Date(2021, 8, 15, 17));
 var event3 = new Events("Italy", "Padua", 366584, "img/vintage.JPG", new Date(2021, 7, 20, 10), 9, "Via Aurelius 3", "Padua Vintage Market", new Date(2021, 8, 15, 17));
 var event4 = new Events("Italy", "Bellagio", 58936, "img/walk.JPG", new Date(2021, 10, 28, 8), 5, "Piazza Centrale 3", "Bellagio Walking Tour", new Date(2021, 8, 15, 17));
 var events = [event1, event2, event3, event4];
-for (var i = 0; i < events.length; i++) {
-    document.getElementById("events").innerHTML += events[i].displayEvent();
-}
+// adds blog posts
+addPlaces(places);
+addRestaurants(restaurants);
+addEvents(events);

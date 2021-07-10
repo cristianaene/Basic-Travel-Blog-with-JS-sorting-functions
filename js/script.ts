@@ -1,3 +1,6 @@
+/**
+ * Parent class for all objects
+ */
 class Locations {
     public country: string;
     public city: string;
@@ -22,7 +25,9 @@ class Locations {
     }
 }
 
-
+/**
+ * Adds visited destinations to locations
+ */
 class Visits extends Locations {
     public name : string;
     public creationdate : Date;
@@ -33,6 +38,9 @@ class Visits extends Locations {
     }
 }
 
+/**
+ * Holds place properties
+ */
 class Places extends Visits {
     constructor (country, city, zipcode, image, address, creationdate) {
         super(country, city, zipcode, image, address, "", creationdate);
@@ -47,6 +55,9 @@ class Places extends Visits {
     }
 }
 
+/**
+ * Holds restaurants properties
+ */
 class Restaurants extends Visits {
     public phoneno: number;
     public resttype: string;
@@ -69,6 +80,9 @@ class Restaurants extends Visits {
     }
 }
 
+/**
+ * Holds events properties
+ */
 class Events extends Visits {
     public eventdate : Date;
     public ticketprice : number;
@@ -89,23 +103,43 @@ class Events extends Visits {
     }
 }
 
+/**
+ * Adds visited places to the HTML page
+ * @param places : array of places
+ */
+function addPlaces(places : Array <Places> ) : void {
+    for (let i = 0; i < places.length; i++) {
+        document.getElementById("places").innerHTML += places[i].displayPlace();
+    }
+}
 
+/**
+ * Adds restaurants to the HTML page
+ * @param restaurants : array of restaurants
+ */
+function addRestaurants (restaurants : Array <Restaurants>) : void{
+    for (let i = 0; i < restaurants.length; i++) {
+        document.getElementById("restaurants").innerHTML += restaurants[i].displayRestaurant();
+    }
+}
+
+/**
+ * Adds events to the HTML page
+ * @param events : array of events
+ */
+function addEvents( events : Array <Events>) : void {
+    for (let i = 0; i < events.length; i++) {
+        document.getElementById("events").innerHTML += events[i].displayEvent();
+    }
+}
 
 // script execution starts here
-
-// places
 let place1 = new Places("Italy", "Burano", 88875, "img/burano3.jpg", "Via Burano 22", new Date(2021,8,15,17));
 let place2 = new Places("Italy", "Padua", 23551, "img/padua.jpg", "Piazza Padua 15", new Date(2021,8,15,17));
 let place3 = new Places("Italy", "Varenna", 125893, "img/varenna.jpg", "Via Antica 36", new Date(2021,8,15,17));
 let place4 = new Places("Italy", "Venice", 784259, "img/venice02.jpg", "Piazza San Marco 85", new Date(2021,8,15,17));
 
 let places : Array <Places> = [place1, place2, place3, place4];
-
-for (let i = 0; i < places.length; i++) {
-    document.getElementById("places").innerHTML += places[i].displayPlace();
-   }
-
-// restaurants
 
 let restaurant1 = new Restaurants("Italy", "Burano", 88875, "img/casadimaria.jpg", 5855555, "Italian Cuisine", "www.cuicina.it","Via Burano 22", "La casa di Maria", new Date(2021,8,15,17));
 let restaurant2 = new Restaurants("Switzerland", "Lugano", 25368, "img/salumeriadalugano.jpg", 8898998, "Swiss charcuterie", "www.salumeria.ch", "Via Appia", "Salumeria da Lugano", new Date(2021,8,15,17));
@@ -114,11 +148,6 @@ let restaurant4 = new Restaurants("Italy", "Padua", 99823, "img/cheesedeli.jpg",
 
 let restaurants : Array <Restaurants> = [restaurant1, restaurant2, restaurant3, restaurant4];
 
-for (let i = 0; i < restaurants.length; i++) {
-    document.getElementById("restaurants").innerHTML += restaurants[i].displayRestaurant();
-}
-
-// events country, city, zipcode, image, eventdate, ticketprice, address, name
 let event1 = new Events("Italy", "Burano", 225888, "img/lace.JPG", new Date(2021,8,15,17), 15, "Via Blanca 15", "Burano Lace Festival", new Date(2021,8,15,17));
 let event2 = new Events("Italy", "Venice", 25877, "img/venice03.JPG", new Date(2021,9,20,19), 20, "Via Academica 15", "Venice Sunsets Fest", new Date(2021,8,15,17));
 let event3 = new Events("Italy", "Padua", 366584, "img/vintage.JPG", new Date(2021,7,20,10), 9, "Via Aurelius 3", "Padua Vintage Market", new Date(2021,8,15,17));
@@ -126,7 +155,7 @@ let event4 = new Events("Italy", "Bellagio", 58936, "img/walk.JPG", new Date(202
 
 let events = [event1, event2, event3, event4];
 
-for (let i = 0; i < events.length; i++) {
-    document.getElementById("events").innerHTML += events[i].displayEvent();
-}
-
+// adds blog posts
+addPlaces(places);
+addRestaurants(restaurants);
+addEvents(events);
